@@ -1,7 +1,12 @@
 package io.springworks.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
 
+	@Id		//Business key annotation
 	private int rollNumber;
 	private String name;
 	private String score;
