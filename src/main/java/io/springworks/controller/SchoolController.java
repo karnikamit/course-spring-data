@@ -34,10 +34,10 @@ public class SchoolController {
 		return studentService.getStudents();
 	}
 
-	@GetMapping("/students/{name}")
-	public Student getStudent(@PathVariable String name) {
-		return studentService.getStudent(name);
-	}
+//	@GetMapping("/students/{name}")
+//	public Student getStudent(@PathVariable String name) {
+//		return studentService.getStudent(name);
+//	}
 
 	@PostMapping("/student")
 	public HttpStatus addStudent(@RequestBody Student student) {
