@@ -22,15 +22,22 @@ public class StudentService {
 		return students;
 	}
 
-//	public Student getStudent(String name) {
-//		return students.stream()
-//				.filter(stu -> stu.getName().equals(name))
-//				.findFirst().get();
-//	}
-//
+	public Student getStudent(int rollNum) {
+		return studenRepo.findOne(rollNum);
+	}
+
 	public void addStudent(Student student) {
 		if(student != null) {
 			studenRepo.save(student);
 		}
+	}
+
+	/**
+	 * Method to update student details
+	 * we still use *repo.save() as it save and updates records using bk
+	 * @param student
+	 */
+	public void updateStuden(Student student) {
+		studenRepo.save(student);
 	}
 }
