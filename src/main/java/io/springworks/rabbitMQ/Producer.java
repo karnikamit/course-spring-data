@@ -21,7 +21,7 @@ public class Producer {
 	private RabbitTemplate rabbitTemplate;
 
 	public void send(Student message) {
-		logger.info("sending message: {}", message);
-		rabbitTemplate.convertAndSend(AppConstants.QUEUE_NAME, message.toString());
+		logger.info("sending message: {}", message.toString());
+		rabbitTemplate.convertAndSend(AppConstants.EXCHANGE_NAME, AppConstants.ROUTING_KEY, message.toString());
 	}
 }
